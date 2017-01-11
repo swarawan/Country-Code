@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Country Code</string>
+    <string name="app_description">ISO-3166 Country and Dependent Territories Lists with UN Regional Codes</string>
+
+    <string name="pref_google_token">pref-google-token</string>
+    <string name="pref_google_uid">pref-google-uid</string>
+    <string name="pref_keep_sign_in">pref-keep-sign-in</string>
+
+    <string name="log_file_not_found">%s: 404</string>
+    <string name="log_connection_off">%s: Connection Lost</string>
+    <string name="log_global">%1$s: %2$s</string>
+    <string name="log_google_id">Google ID: %s</string>
+    <string name="log_google_token">Google Token: %s</string>
+    <string name="log_signin">User Sign In with UID: %s</string>
+    <string name="log_signout">User Sign Out</string>
+
+    <string name="message_google_play_error">Google Play Services error.</string>
+    <string name="message_auth_failed">Authentication failed.</string>
+
+    <string name="search_hint">Search country here…</string>
+
+    <string name="item_default_country_name">{country-name}</string>
+    <string name="item_alpha2">Alpha-2 : %s</string>
+    <string name="item_alpha3">Alpha-3 : %s</string>
+    <string name="item_region">Region : %s</string>
+    <string name="item_sub_region">Sub Region : %s</string>
+
+</resources>

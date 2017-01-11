@@ -1,0 +1,16 @@
+ext {
+    supportLibVersion = "25.1.0"
+    firebaseLibVersion = "10.0.1"
+    ormLiteLibVersion = "4.48"
+
+    dependencies = [
+            appCompat         : "com.android.support:appcompat-v7:$supportLibVersion",
+            cardView          : "com.android.support:cardview-v7:$supportLibVersion",
+            ormCore           : "com.j256.ormlite:ormlite-core:$ormLiteLibVersion",
+            ormAndroid        : "com.j256.ormlite:ormlite-android:$ormLiteLibVersion",
+            timber            : "com.jakewharton.timber:timber:4.1.2",
+            firebaseAuth      : "com.google.firebase:firebase-auth:$firebaseLibVersion",
+            googlePlayServices: "com.google.android.gms:play-services-auth:$firebaseLibVersion",
+            gson              : "com.google.code.gson:gson:2.8.0"
+    ]
+}

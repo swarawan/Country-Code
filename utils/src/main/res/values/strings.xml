@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Utils</string>
+
+    <string name="connection_fail">Gangguan pada jaringan. Silakan dicoba beberapa saat lagi.</string>
+    <string name="duplicate_dialog">Dialog already shown, dismiss first before instance new dialog.</string>
+
+</resources>

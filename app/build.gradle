@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+    defaultConfig {
+        applicationId "com.swarawan.countrycode"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'MissingTranslation', 'ExtraTranslation', 'StringFormatInvalid', 'ValidFragment'
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    applicationVariants.all { variant ->
+        def appName = applicationName
+        variant.outputs.each { output ->
+            def newApkName
+            if (output.zipAlign) {
+                newApkName = "${appName}-${output.baseName}-${variant.versionName}.apk"
+            } else {
+                newApkName = "${appName}-${output.baseName}-${variant.versionName}-unaligned.apk"
+            }
+            output.outputFile = new File(output.outputFile.parent, newApkName)
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':utils')
+    Map<String, String> dependencies = rootProject.ext.dependencies
+    compile dependencies.appCompat
+    compile dependencies.cardView
+    compile dependencies.ormCore
+    compile dependencies.ormAndroid
+    compile dependencies.timber
+    compile dependencies.firebaseAuth
+    compile dependencies.googlePlayServices
+    compile dependencies.gson
+}
+
+apply plugin: 'com.google.gms.google-services'
